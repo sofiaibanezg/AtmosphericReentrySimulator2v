@@ -1,5 +1,9 @@
 # src/Simulator.py
 
+from Capsule import Capsule
+import matplotlib.pyplot as plt
+
+
 class ReentrySimulator:
     def __init__(self, capsule, atmosphere, dt=1.0):
         self.capsule = capsule
@@ -50,3 +54,31 @@ class ReentrySimulator:
             self.step()
             print(self.capsule)  # Muestra estado actual
         print("\nCapsule has landed, congrats.")
+
+    def plot_results(self):
+        times = [entry[0] for entry in self.data_log]
+        altitudes = [entry[1] for entry in self.data_log]
+        velocities = [entry[2] for entry in self.data_log]
+        temperatures = [entry[3] for entry in self.data_log]
+
+        plt.figure(figsize=(12, 8))
+
+        plt.subplot(3, 1, 1)
+        plt.plot(times, altitudes, label="Altitude (m)", color='blue')
+        plt.ylabel("Altitude (m)")
+        plt.grid(True)
+
+        plt.subplot(3, 1, 2)
+        plt.plot(times, velocities, label="Velocity (m/s)", color='red')
+        plt.ylabel("Velocity (m/s)")
+        plt.grid(True)
+
+        plt.subplot(3, 1, 3)
+        plt.plot(times, temperatures, label="Temperature (K)", color='orange')
+        plt.xlabel("Time (s)")
+        plt.ylabel("Temperature (K)")
+        plt.grid(True)
+
+        plt.tight_layout()
+        plt.suptitle("Reentry Simulation Results", fontsize=16, y=1.02)
+        plt.show()

@@ -10,7 +10,7 @@ class Capsule:
         self.temperature = 300  # K
 
     def is_landed(self):
-        return self.altitude <= 0
+        return (self.altitude <= 0)
 
     def __str__(self):
         return f"Altitud: {self.altitude} m | Velocidad: {self.velocity} m/s | Temp: {self.temperature} K"
