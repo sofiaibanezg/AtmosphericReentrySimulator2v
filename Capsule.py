@@ -1,4 +1,4 @@
-# src/capsule.py
+# src/Capsule.py
 
 class Capsule:
     def __init__(self, mass, area, drag_coefficient):
