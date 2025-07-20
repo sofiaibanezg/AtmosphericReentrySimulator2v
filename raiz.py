@@ -2,7 +2,7 @@ class ReentrySimulator:
     def __init__(self, capsule, atmosphere):
         self.capsule = capsule
         self.atmosphere = atmosphere
-        self.time = 0
+        self.time = 3
         self.dt = 1  # paso de tiempo en segundos
         self.data_log = []
 
