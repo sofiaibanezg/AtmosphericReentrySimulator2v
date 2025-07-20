@@ -56,10 +56,10 @@ class ReentrySimulator:
         print("\nCapsule has landed, congrats.")
 
     def plot_results(self):
-        times = [entry[0] for entry in self.data_log]
-        altitudes = [entry[1] for entry in self.data_log]
-        velocities = [entry[2] for entry in self.data_log]
-        temperatures = [entry[3] for entry in self.data_log]
+        times = [entry[0] for entry in self.data_log][:-1]
+        altitudes = [entry[1] for entry in self.data_log][:-1]
+        velocities = [entry[2] for entry in self.data_log][:-1]
+        temperatures = [entry[3] for entry in self.data_log][:-1]
 
         plt.figure(figsize=(12, 8))
 
