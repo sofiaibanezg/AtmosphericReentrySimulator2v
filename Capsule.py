@@ -10,6 +10,7 @@ class Capsule:
         self.temperature = 300  # K
 
     def is_landed(self):
+        print('Hola')
         return self.altitude <= 0
 
     def __str__(self):
