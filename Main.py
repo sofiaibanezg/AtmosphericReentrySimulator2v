@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 def main():
     # Create the capsule with mass (kg), cross-sectional area (m²), and drag coefficient
 
-    caps  = Capsule(mass=2000, area=10, drag_coefficient=1.2)
+    caps  = Capsule(mass=2490, area=6, drag_coefficient=0.2)
 
     # Create the atmosphere model
     atms = Atmosphere()
